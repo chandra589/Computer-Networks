@@ -1,0 +1,101 @@
+DNSSEC - It basically has three steps:
+1. Verifying DNSKEY RRSET with RRSIG of that Zone
+2. Verifying DS RRSET with RRSIG of that Zone
+3. Verifying previous domain Hash of KSK with the current domain KSK
+
+
+The program dnssec.py takes one argument which is the domain to be verified.
+The rdtype is 'A' by default.
+
+Here is the output for a few sites.
+
+C:\Users\chand\OneDrive\Documents\Python files>python dnssec.py www.cnn.com
+QUESTION SECTION:
+
+www.cnn.com     A
+
+ANSWER SECTION:
+
+ZONE -  .  -----------DNSKEY-RRSET Verified Successfully
+ZONE -  .  -----------DS-RRSET Verified Successfully
+ZONE -  .  -----------Root Key Signing Key Verified Successfully
+ZONE - com. -----------DNSKEY-RRSET Verified Successfully
+ZONE - com. -----------DNSSEC not supported from this zone as we are not able to verify Zone DS record
+
+**********************************************************************************************************
+**********************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python dnssec.py akamai.com
+QUESTION SECTION:
+
+akamai.com     A
+
+ANSWER SECTION:
+
+ZONE -  .  -----------DNSKEY-RRSET Verified Successfully
+ZONE -  .  -----------DS-RRSET Verified Successfully
+ZONE -  .  -----------Root Key Signing Key Verified Successfully
+ZONE - com. -----------DNSKEY-RRSET Verified Successfully
+ZONE - com. ------------DS-RRSET Verified Successfully
+ZONE - com. ------------Zone Key Signing Key Verified Successfully
+ZONE - akamai.com. -----------DNSKEY-RRSET Verified Successfully
+ZONE - akamai.com. -----------A-record-RRSET Verified Successfully
+ZONE - akamai.com. ------------Zone Key Signing Key Verified Successfully
+akamai.com      A       184.86.160.138
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python dnssec.py www.dnssec-failed.org
+QUESTION SECTION:
+
+www.dnssec-failed.org     A
+
+ANSWER SECTION:
+
+ZONE -  .  -----------DNSKEY-RRSET Verified Successfully
+ZONE -  .  -----------DS-RRSET Verified Successfully
+ZONE -  .  -----------Root Key Signing Key Verified Successfully
+ZONE - org. -----------DNSKEY-RRSET Verified Successfully
+ZONE - org. ------------DS-RRSET Verified Successfully
+ZONE - org. ------------Zone Key Signing Key Verified Successfully
+ZONE - dnssec-failed.org. -----------DNSKEY-RRSET Verified Successfully
+ZONE - dnssec-failed.org. -----------A-record-RRSET Verified Successfully
+ZONE - dnssec-failed.org. ------------Zone Key Signing Key Verification Failed
+DNSSEC Verification Failed
+
+************************************************************************************************************
+************************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python dnssec.py cloudfare.com
+QUESTION SECTION:
+
+cloudfare.com     A
+
+ANSWER SECTION:
+
+ZONE -  .  -----------DNSKEY-RRSET Verified Successfully
+ZONE -  .  -----------DS-RRSET Verified Successfully
+ZONE -  .  -----------Root Key Signing Key Verified Successfully
+ZONE - com. -----------DNSKEY-RRSET Verified Successfully
+ZONE - com. -----------DNSSEC not supported from this zone as we are not able to verify Zone DS record
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python dnssec.py google.com
+QUESTION SECTION:
+
+google.com     A
+
+ANSWER SECTION:
+
+ZONE -  .  -----------DNSKEY-RRSET Verified Successfully
+ZONE -  .  -----------DS-RRSET Verified Successfully
+ZONE -  .  -----------Root Key Signing Key Verified Successfully
+ZONE - com. -----------DNSKEY-RRSET Verified Successfully
+ZONE - com. -----------DNSSEC not supported from this zone as we are not able to verify Zone DS record
+
+*********************************************************************************************************
+*********************************************************************************************************
+

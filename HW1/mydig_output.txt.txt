@@ -1,0 +1,138 @@
+File Name: mydig.py
+Argument-1: domain name
+Argument-2: A or NS or MX
+
+
+Giving a few examples of how to run the file and the output along with it.
+
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py google.com A
+QUESTION SECTION:
+
+google.com     A
+
+ANSWER SECTION:
+
+google.com      A       142.250.65.238
+Query time: 62 msec
+WHEN: Thu Sep 23 14:58:46 2021
+MSG SIZE rcvd: 48
+
+*****************************************************************************************************
+*****************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py youtube.com A
+QUESTION SECTION:
+
+youtube.com     A
+
+ANSWER SECTION:
+
+youtube.com      A      142.250.176.206
+Query time: 61 msec
+WHEN: Thu Sep 23 15:00:15 2021
+MSG SIZE rcvd: 48
+
+*****************************************************************************************************
+*****************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py youtube.com A
+QUESTION SECTION:
+
+youtube.com     A
+
+ANSWER SECTION:
+
+youtube.com      A      142.250.176.206
+Query time: 61 msec
+WHEN: Thu Sep 23 15:00:15 2021
+MSG SIZE rcvd: 48
+
+*****************************************************************************************************
+*****************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py amazon.com A
+QUESTION SECTION:
+
+amazon.com     A
+
+ANSWER SECTION:
+
+amazon.com      A       54.239.28.85
+amazon.com      A       176.32.103.205
+amazon.com      A       205.251.242.103
+Query time: 110 msec
+WHEN: Thu Sep 23 15:02:00 2021
+MSG SIZE rcvd: 48
+
+******************************************************************************************************
+******************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py amazon.com NS
+QUESTION SECTION:
+
+amazon.com     NS
+
+ANSWER SECTION:
+
+amazon.com      NS      pdns1.ultradns.net.
+amazon.com      NS      ns4.p31.dynect.net.
+amazon.com      NS      ns3.p31.dynect.net.
+amazon.com      NS      ns2.p31.dynect.net.
+amazon.com      NS      ns1.p31.dynect.net.
+amazon.com      NS      pdns6.ultradns.co.uk.
+Query time: 118 msec
+WHEN: Thu Sep 23 15:03:47 2021
+MSG SIZE rcvd: 48
+
+******************************************************************************************************
+******************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py facebook.com NS
+QUESTION SECTION:
+
+facebook.com     NS
+
+ANSWER SECTION:
+
+facebook.com      NS    b.ns.facebook.com.
+facebook.com      NS    a.ns.facebook.com.
+facebook.com      NS    d.ns.facebook.com.
+facebook.com      NS    c.ns.facebook.com.
+Query time: 56 msec
+WHEN: Thu Sep 23 15:04:41 2021
+MSG SIZE rcvd: 48
+
+*******************************************************************************************************
+*******************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py google.com MX
+QUESTION SECTION:
+
+google.com     MX
+
+ANSWER SECTION:
+
+google.com      MX      40 alt3.aspmx.l.google.com.
+google.com      MX      10 aspmx.l.google.com.
+google.com      MX      20 alt1.aspmx.l.google.com.
+google.com      MX      50 alt4.aspmx.l.google.com.
+google.com      MX      30 alt2.aspmx.l.google.com.
+Query time: 73 msec
+WHEN: Thu Sep 23 15:05:47 2021
+MSG SIZE rcvd: 48
+
+*******************************************************************************************************
+*******************************************************************************************************
+
+C:\Users\chand\OneDrive\Documents\Python files>python mydig.py microsoft.com MX
+QUESTION SECTION:
+
+microsoft.com     MX
+
+ANSWER SECTION:
+
+microsoft.com      MX   10 microsoft-com.mail.protection.outlook.com.
+Query time: 55 msec
+WHEN: Thu Sep 23 15:06:50 2021
+MSG SIZE rcvd: 48
